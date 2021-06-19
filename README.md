@@ -1,39 +1,37 @@
-# canyonsCSclub
+# Space Shooter 9000
+*College of the Canyon's Computer Science Club's Fall 2017 project (expanded upon by Hunter Goodin)* 
 
-Canyons CS Club Program
+https://coc-computerscienceclub.itch.io/space-shooter-9000
 
-Hello 2017 Club Members!
+<img src="https://huntergoodin.com/images/devphotos/SS9000Logo.png" width="347" height="347" />
 
-This is the depot we will be using to upload, merge, branch and distribute our code.  
+<details>
+<summary>Specs</summary>
+<blockquote>
 
-(NOT YET)To run this go to CompSciClubFall2017\Assets\\_Scenes and run Tbui_TestLevel.unity.  Feel add your own Scenes!
+Unity ???
+lol Unity Hub says "Unavailable" right next to the Unity Version 
 
-Guide to how to use GitHub is here: https://guides.github.com/
+SLN solution in Visual Studio Community 2019 Preview 
+https://visualstudio.microsoft.com/vs/community/
 
-Tools needed.
+</blockquote>
+</details>
 
-Visual Studio   - https://beta.visualstudio.com/downloads/ Or use MonoDevelop.
-    
-    MonoDevelop is good from those who use Apple, because it comes with Unity (below)
+<details>
+<summary>Change List</summary>
+<blockquote>
 
-Unity           - https://unity3d.com/unity 
+<details>
+<summary>CL-000000 (The First Update)</summary>
+<blockquote>
 
+- Made the following changes: 
+	- Added project as it was in the old repository
+	- Edited the README to reflect the above changes 
 
-Other Tools.
+</blockquote>
+</details>
 
-GitHub Desktop  - https://github.com/integrations/github-desktop (Easier way to Download/Upload from GitHub)
-
-1) Download:  https://desktop.github.com/ <p>
-2) Do the Tutorial. Delete Tutorial.<p>
-3) Go to: https://github.com/CanyonsCSClub/Fall2017<p>
-4) Click on the Green "Clone or download" button, then select Open in Desktop<p>
-5) Click on the branch, and make a branch with your name.<p>
-6) Click on Publish button in the upper right to commit your branch.<p>
-7) Do all the edits to the project using this folder, and make a Pull Request when you want to share your work!<p>
-
-Or you can use GitKraken.
-
-Paint.net       - http://www.getpaint.net/index.html (If you don't have Adobe)
-
-
-If you have any questions be sure to ask me at chris.leal@outlook.com
+</blockquote>
+</details>
