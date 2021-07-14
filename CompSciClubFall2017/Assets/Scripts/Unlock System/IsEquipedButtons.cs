@@ -12,12 +12,12 @@ public class IsEquipedButtons : MonoBehaviour
     public bool isShip04;
     public bool isShip05;
 
-    public string path;         // This will hold address where the .txt file is 
+    private string path;         // This will hold address where the .txt file is 
 
     void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");     // Finding the player object 
-        path = "Assets/Scripts/Unlock System/ShipCurrentlyEquipped.txt";    // Setting path to the address where the .txt file is 
+        path = "Data/ShipCurrentlyEquipped.txt";    // Setting path to the address where the .txt file is 
     }
 
     void OnMouseUp()

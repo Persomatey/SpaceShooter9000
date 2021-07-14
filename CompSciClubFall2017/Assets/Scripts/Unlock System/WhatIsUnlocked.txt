@@ -12,10 +12,10 @@ Ship05:
 N
 === The Progress Made Towards Unlocking All Of The Ships === 
 Ship02 Progress: 
-0
+3310
 Ship03 Progress: 
-0
+38
 Ship04 Progress: 
-0
+19
 Ship05 Progress: 
-0
+23

@@ -8,7 +8,7 @@ public class EquipSystem : MonoBehaviour
 {
     public int choiceNum;
     public string readNum;
-    public string path; 
+    private string path; 
 
     public GameObject ship01;
     public GameObject ship02;
@@ -19,7 +19,7 @@ public class EquipSystem : MonoBehaviour
     public void Start()
     {
         choiceNum = 0;
-        path = "Assets/Scripts/Unlock System/ShipCurrentlyEquipped.txt"; 
+        path = "Data/ShipCurrentlyEquipped.txt"; 
     }
 
     public void ReadString()

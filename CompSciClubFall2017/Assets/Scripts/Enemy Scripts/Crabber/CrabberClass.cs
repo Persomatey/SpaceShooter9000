@@ -25,7 +25,7 @@ public class CrabberClass : MonoBehaviour
     private Vector3 newPos;
     private AudioSource crabAudio;
 
-    public string path = "Assets/Scripts/Unlock System/WhatIsUnlocked.txt";
+    private string path = "Data/WhatIsUnlocked.txt";
     public List<string> readList = new List<string>();
     public int ship05Prog;
     public string ship05ProgToInt;
@@ -90,7 +90,7 @@ public class CrabberClass : MonoBehaviour
     {
         if(col.gameObject.name == "Bolt(Clone)" )
         {
-            Destroy(col.gameObject);
+            //Destroy(col.gameObject);
         }
     }
 
@@ -98,14 +98,28 @@ public class CrabberClass : MonoBehaviour
     {
         if (health <= 0)
         {
-            UnlockedReader();
+            /* Reading */
+            StreamReader reader = new StreamReader(path);
+
+            while (!reader.EndOfStream)
+            {
+                string line = reader.ReadLine();
+                readList.Add(line);
+            }
+
+            ship05ProgToInt = readList[20];
+
+            Convert.ToInt32(ship05ProgToInt);
+            ship05Prog = Int32.Parse(ship05ProgToInt);
+
+            reader.Close();
+
+            /* Writing */
 
             StreamWriter writer = new StreamWriter(path);
             GameObject.Find("DisplayPoints").GetComponent<PointSystem>().UpdateScore(scoreValue);
-            Destroy(gameObject);
             Instantiate(ptVal, ptValLoc.position, ptValLoc.rotation);
 
-            /* Writing */
             ship05Prog++;
 
             readList[20] = "" + ship05Prog;
@@ -116,6 +130,8 @@ public class CrabberClass : MonoBehaviour
             }
 
             writer.Close();
+
+            Destroy(gameObject);
         }
     }
 

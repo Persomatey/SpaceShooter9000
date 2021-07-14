@@ -16,7 +16,11 @@ public class Displayer : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        Vector3 namePos = Camera.main.WorldToScreenPoint(this.transform.position);
-        pointPop.transform.position = namePos;
+        if(pointPop)
+		{
+            Vector3 namePos = Camera.main.WorldToScreenPoint(this.transform.position);
+            pointPop.transform.position = namePos;
+        }
+        
     }
 }

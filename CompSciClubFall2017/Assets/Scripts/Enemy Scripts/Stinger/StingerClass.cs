@@ -27,7 +27,7 @@ public class StingerClass : MonoBehaviour
     private Vector3 newPos;
     private AudioSource stingAudio;
 
-    public string path = "Assets/Scripts/Unlock System/WhatIsUnlocked.txt";
+    private string path = "Data/WhatIsUnlocked.txt";
     public List<string> readList = new List<string>();
     public int ship03Prog;
     public string ship03ProgToInt;
@@ -52,6 +52,9 @@ public class StingerClass : MonoBehaviour
     public void Update()
     {
         checkStingerHealth();
+
+        /* Testing */
+        //transform.Find("HPText").GetComponent<TextMesh>().text = "" + health; 
     }
 
     // Update is called once per frame
@@ -82,7 +85,7 @@ public class StingerClass : MonoBehaviour
 
     public void TakeDamage(int pDamage) // takeDamage is called when the bullet hits the enemy.
     {
-        health -= pDamage;
+        health -= 1;
         stingAudio.Play();
     }
 
@@ -91,11 +94,11 @@ public class StingerClass : MonoBehaviour
     {
         if(col.gameObject.name == "Bolt(Clone)" )
         {
-            Destroy(col.gameObject);
+            //Destroy(col.gameObject);
         }
         if (col.gameObject.name == "StingerBullet(Clone)")
         {
-            Destroy(col.gameObject);
+            //Destroy(col.gameObject);
         }
     }
 
@@ -103,14 +106,28 @@ public class StingerClass : MonoBehaviour
     {
         if (health <= 0)
         {
-            UnlockedReader();
+            /* Reading */
+            StreamReader reader = new StreamReader(path);
+
+            while (!reader.EndOfStream)
+            {
+                string line = reader.ReadLine();
+                readList.Add(line);
+            }
+
+            ship03ProgToInt = readList[16];
+
+            Convert.ToInt32(ship03ProgToInt);
+            ship03Prog = Int32.Parse(ship03ProgToInt);
+
+            reader.Close();
+
+            /* Writing */
 
             StreamWriter writer = new StreamWriter(path);
             GameObject.Find("DisplayPoints").GetComponent<PointSystem>().UpdateScore(scoreValue);
-            Destroy(gameObject);
             Instantiate(ptVal, ptValLoc.position, ptValLoc.rotation);
 
-            /* Writing */ 
             ship03Prog++;
 
             readList[16] = "" + ship03Prog;
@@ -121,6 +138,8 @@ public class StingerClass : MonoBehaviour
             }
 
             writer.Close();
+
+            Destroy(gameObject);
         }
     }
 

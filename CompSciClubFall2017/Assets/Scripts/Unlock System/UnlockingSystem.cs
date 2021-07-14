@@ -7,8 +7,8 @@ using System;
 
 public class UnlockingSystem : MonoBehaviour
 {
-    public string highScorePath = "Assets/Scripts/Point System/HighScore.txt";
-    public string allUnlockedPath = "Assets/Scripts/Unlock System/WhatIsUnlocked.txt";
+    private string highScorePath = "Data/HighScore.txt";
+    private string allUnlockedPath = "Data/WhatIsUnlocked.txt";
 
     public GameObject ship01ScriptObj;
     public GameObject ship02ScriptObj;

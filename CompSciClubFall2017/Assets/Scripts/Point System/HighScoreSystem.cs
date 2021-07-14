@@ -17,16 +17,16 @@ using System.IO;
 public class HighScoreSystem : MonoBehaviour
 {
     public Text showHighScore;
-    public string pathTemp;
-    public string pathHigh;
+    private string pathTemp;
+    private string pathHigh;
 
     private int pointTemp;
     private int pointHigh; 
 
     void Start () 
     {
-        pathTemp = "Assets/Scripts/Point System/TempScore.txt";    
-        pathHigh = "Assets/Scripts/Point System/HighScore.txt";
+        pathTemp = "Data/TempScore.txt";    
+        pathHigh = "Data/HighScore.txt";
 
         StreamReader readerTemp = new StreamReader(pathTemp);
         StreamReader readerHigh = new StreamReader(pathHigh);

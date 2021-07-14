@@ -27,7 +27,7 @@ public class ChomperClass : MonoBehaviour
     private Vector3 newPos;
     private AudioSource chompAudio;
 
-    public string path = "Assets/Scripts/Unlock System/WhatIsUnlocked.txt";
+    private string path = "Data/WhatIsUnlocked.txt";
     public List<string> readList = new List<string>();
     public int ship04Prog;
     public string ship04ProgToInt;
@@ -40,7 +40,9 @@ public class ChomperClass : MonoBehaviour
 
     public Transform shotSpawn; 
     private float fireRate = 5f;
-    private float nextFire; 
+    private float nextFire;
+
+    bool dieOnce = false; 
 
     // Use this for initialization
     void Start()
@@ -54,7 +56,6 @@ public class ChomperClass : MonoBehaviour
         checkChomperHealth();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         chomperMovement(); // Checks if there is any input from the player and adjusts the enemy Chomper's position according to the change.
@@ -92,26 +93,41 @@ public class ChomperClass : MonoBehaviour
     {
         if(col.gameObject.name == "Bolt(Clone)" )
         {
-            Destroy(col.gameObject);
+            //Destroy(col.gameObject);
         }
         if (col.gameObject.name == "ChomperBullet(Clone)")
         {
-            Destroy(col.gameObject);
+            //Destroy(col.gameObject);
         }
     }
 
     private void checkChomperHealth() // Checks to see if the Chomper is alive or not.
     {
-        if (health <= 0)
+        if (!dieOnce && health <= 0)
         {
-            UnlockedReader();
+            dieOnce = true; 
 
-            StreamWriter writer = new StreamWriter(path);
-            GameObject.Find("DisplayPoints").GetComponent<PointSystem>().UpdateScore(scoreValue);
-            Destroy(gameObject);
-            Instantiate(ptVal, ptValLoc.position, ptValLoc.rotation);
+            /* Reading */
+            StreamReader reader = new StreamReader(path);
+
+            while (!reader.EndOfStream)
+            {
+                string line = reader.ReadLine();
+                readList.Add(line);
+            }
+
+            ship04ProgToInt = readList[18];
+
+            Convert.ToInt32(ship04ProgToInt);
+            ship04Prog = Int32.Parse(ship04ProgToInt);
+
+            reader.Close();
 
             /* Writing */
+            StreamWriter writer = new StreamWriter(path);
+            GameObject.Find("DisplayPoints").GetComponent<PointSystem>().UpdateScore(scoreValue);
+            Instantiate(ptVal, ptValLoc.position, ptValLoc.rotation);
+
             ship04Prog++;
 
             readList[18] = "" + ship04Prog;
@@ -122,6 +138,8 @@ public class ChomperClass : MonoBehaviour
             }
 
             writer.Close();
+
+            Destroy(gameObject);
         }
     }
 

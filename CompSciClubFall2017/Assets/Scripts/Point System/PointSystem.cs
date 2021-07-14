@@ -25,9 +25,9 @@ public class PointSystem : MonoBehaviour
     const int BOSS1 = 1000; //possible values for later
     const int BOSS2 = 2000; //possible values for later 
 
-    public string pathTemp;
+    private string pathTemp;
     public int pointTemp;
-    public string pathHigh;
+    private string pathHigh;
     private int pointHigh;
 
     private string pointHighToInt;
@@ -42,8 +42,8 @@ public class PointSystem : MonoBehaviour
         ShowOnScreen();
         scoreTimer = scoreDelayTimer;
 
-        pathTemp = "Assets/Scripts/Point System/TempScore.txt";   
-        pathHigh = "Assets/Scripts/Point System/HighScore.txt";
+        pathTemp = "Data/TempScore.txt";   
+        pathHigh = "Data/HighScore.txt";
     }
 
     private void ShowOnScreen()

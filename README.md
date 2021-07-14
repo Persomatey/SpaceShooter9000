@@ -1,7 +1,7 @@
 # Space Shooter 9000
 *College of the Canyon's Computer Science Club's Fall 2017 project (expanded upon by Hunter Goodin)* 
 
-https://coc-computerscienceclub.itch.io/space-shooter-9000
+https://persomatey.itch.io/space-shooter-9000
 
 <img src="https://huntergoodin.com/images/devphotos/SS9000Logo.png" width="347" height="347" />
 
@@ -21,6 +21,23 @@ https://visualstudio.microsoft.com/vs/community/
 <details>
 <summary>Change List</summary>
 <blockquote>
+
+<details>
+<summary>CL-000001 (The Quality Assurance Update)</summary>
+<blockquote>
+
+- Made the following changes: 
+	- Updated the project to Unity 2020.3.8f1 
+		- This will help when updating the game going forward 
+	- Various bug fixes 
+		- Fixed the broken unlock system 
+		- Fixed the broken high schore system 
+		- Fixed the bug where enemies don't die 
+		- Fixed the data pathways and added a specific Data folder for serialization 
+	- Edited the README to reflect the above changes 
+
+</blockquote>
+</details>
 
 <details>
 <summary>CL-000000 (The First Update)</summary>
