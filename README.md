@@ -9,8 +9,8 @@ https://persomatey.itch.io/space-shooter-9000
 <summary>Specs</summary>
 <blockquote>
 
-Unity ???
-lol Unity Hub says "Unavailable" right next to the Unity Version 
+Unity 2020.3.8f1
+https://download.unity3d.com/download_unity/507919d4fff5/UnityDownloadAssistant-2020.3.8f1.exe
 
 SLN solution in Visual Studio Community 2019 Preview 
 https://visualstudio.microsoft.com/vs/community/
